@@ -24,6 +24,7 @@ body {
     background-color: var(--white);
     padding: 30px;
     border-radius: 10px;
+    max-width: 30rem;
 }
 
 .faq-header {
@@ -49,16 +50,26 @@ h1 {
     list-style: none;
 }
 
-.faq-item p {
-    display: none;
-}
-
-.faq-item .minus-icon {
-    display: none;
-}
-
 .question {
     display: flex;
     justify-content: space-between;
     gap: 40px;
+}
+
+.question.open .plus-icon,
+.question .minus-icon,
+.question + p {
+    display: none;
+}
+
+.question.open .minus-icon,
+.question.open + p {
+    display: block;
+}
+
+@media (min-width: 40em) {
+    body {
+        background: url(./assets/images/background-pattern-desktop.svg) no-repeat var(--light-pink);
+        background-size: 100%;
+    }
 }
